@@ -26,55 +26,52 @@ require('datatables.net-fixedheader');
 const names = [
     {
         id: 1,
-        GrantNo: '1001',
-        DocNo: '100-221',
-        GrantName: 'Tiger Nixon',
-        StartDate: '2010/01/10',
-        EndDate: '2011/04/25',
-        MajorDept: 'Dept. of Defance',
-        SubDept: 'Dept. of None',
-        GL_FundNo: '11-XX-2003',
-        GL_Dept: 'Federral',
-        Grant_Desc: 'This Grant is related to NGO',
-        Grant_Amt: '$120,000,00',
-        IDC_Percentage: '16%',
-        IDC_Amt: '$50,000',
-        IDC_Limit: '$20,000'
+        Amt: '$492,456,000',
+        Acc_code: '100-221-77',
+        Fund: 'Tiger Nixon',
+        Year: '2024',
+        Dept: 'Federral',
+        Gl: 'XX-XXX-XX',
+        Gl_desc: 'Dept. of None',
+        Trans_desc: 'Null',
+        Budget_date: '2011/04/25'
     },
     {
         id: 2,
-        GrantNo: '1002',
-        DocNo: '100-261',
-        GrantName: 'Tiger Nixon',
-        StartDate: '2010/01/10',
-        EndDate: '2011/04/25',
-        MajorDept: 'Dept. of Defance',
-        SubDept: 'Dept. of None',
-        GL_FundNo: '11-XX-2003',
-        GL_Dept: 'Federral',
-        Grant_Desc: 'This Grant is related to NGO',
-        Grant_Amt: '$120,000,00',
-        IDC_Percentage: '16%',
-        IDC_Amt: '$50,000',
-        IDC_Limit: '$20,000'
+        Amt: '$492,456,000',
+        Acc_code: '100-221-77',
+        Fund: 'Tiger Nixon',
+        Year: '2024',
+        Dept: 'Federral',
+        Gl: 'XX-XXX-XX',
+        Gl_desc: 'Dept. of None',
+        Trans_desc: 'Null',
+        Budget_date: '2011/04/25'
     },
     {
         id: 3,
-        GrantNo: '1003',
-        DocNo: '100-561',
-        GrantName: 'Tiger Nixon',
-        StartDate: '2010/01/10',
-        EndDate: '2011/04/25',
-        MajorDept: 'Dept. of Defance',
-        SubDept: 'Dept. of None',
-        GL_FundNo: '11-XX-2003',
-        GL_Dept: 'Federral',
-        Grant_Desc: 'This Grant is related to NGO',
-        Grant_Amt: '$120,000,00',
-        IDC_Percentage: '16%',
-        IDC_Amt: '$50,000',
-        IDC_Limit: '$20,000'
+        Amt: '$492,456,000',
+        Acc_code: '100-221-77',
+        Fund: 'Tiger Nixon',
+        Year: '2024',
+        Dept: 'Federral',
+        Gl: 'XX-XXX-XX',
+        Gl_desc: 'Dept. of None',
+        Trans_desc: 'Null',
+        Budget_date: '2011/04/25'
     },
+    {
+        id: 4,
+        Amt: '$492,456,000',
+        Acc_code: '100-221-77',
+        Fund: 'Tiger Nixon',
+        Year: '2024',
+        Dept: 'Federral',
+        Gl: 'XX-XXX-XX',
+        Gl_desc: 'Dept. of None',
+        Trans_desc: 'Null',
+        Budget_date: '2011/04/25'
+    }
 ];
 
 function atable() {
@@ -157,7 +154,7 @@ function atable() {
     ];
     // @ts-ignore
     let buttonTable = $(tableButton).DataTable({
-        dom: 'Bfrti',
+        // dom: 'Bfrti',
         data: names,
         order: [[0, 'asc']],
         columns: [
@@ -168,85 +165,55 @@ function atable() {
                 }
             },
             {
-                data: 'GrantNo',
+                data: 'Amt',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'DocNo',
+                data: 'Acc_code',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'GrantName',
+                data: 'Fund',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'StartDate',
+                data: 'Year',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'EndDate',
+                data: 'Dept',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'MajorDept',
+                data: 'Gl',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'SubDept',
+                data: 'Gl_desc',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'GL_FundNo',
+                data: 'Trans_desc',
                 render: function (data, type, row) {
                     return data;
                 }
             },
             {
-                data: 'GL_Dept',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'Grant_Desc',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'Grant_Amt',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'IDC_Percentage',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'IDC_Amt',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'IDC_Limit',
+                data: 'Budget_date',
                 render: function (data, type, row) {
                     return data;
                 }
@@ -261,7 +228,7 @@ function atable() {
     }
 }
 
-function Allgrants() {
+function Allbudgets() {
     useEffect(() => {
         atable();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -272,27 +239,22 @@ function Allgrants() {
                 <Col>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h5">All Grants</Card.Title>
+                            <Card.Title as="h5">All s</Card.Title>
                         </Card.Header>
                         <Card.Body>
                             <Table striped hover responsive bordered className="table table-condensed" id="datatable-button">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Grant No</th>
-                                        <th>Doc No</th>
-                                        <th>Grant Name</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Major Department</th>
-                                        <th>Sub Department</th>
-                                        <th>GL Fund No</th>
-                                        <th>GL Department</th>
-                                        <th>Grant Desc.</th>
-                                        <th>Grant Amt.</th>
-                                        <th>IDC Percentage</th>
-                                        <th>IDC Amount</th>
-                                        <th>Threshold Limit</th>
+                                        <th>Amount</th>
+                                        <th>ACC. Code</th>
+                                        <th>Fund</th>
+                                        <th>Year</th>
+                                        <th>Dept</th>
+                                        <th>General Ledger</th>
+                                        <th>GL Desc</th>
+                                        <th>Trans_desc</th>
+                                        <th>Budget_date</th>
                                     </tr>
                                 </thead>
                             </Table>
@@ -304,4 +266,4 @@ function Allgrants() {
     );
 }
 
-export default Allgrants;
+export default Allbudgets;

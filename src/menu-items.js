@@ -10,7 +10,7 @@ const chartData = {
                     title: 'Dashboard',
                     type: 'item',
                     icon: 'feather icon-home',
-                    url: '/dashboard/default'
+                    url: '/dashboard/'
                     // target: true,
                 },
                 {
@@ -24,7 +24,7 @@ const chartData = {
                             id: 'add-grants',
                             title: 'Add Grants',
                             type: 'item',
-                            url: '/dashboard/'
+                            url: '/#'
                         },
                         {
                             id: 'all-grants',
@@ -46,13 +46,13 @@ const chartData = {
                             id: 'add-budget',
                             title: 'Add Budget',
                             type: 'item',
-                            url: '/dashboard/'
+                            url: '/#'
                         },
                         {
                             id: 'all-budget',
                             title: 'Budget List',
                             type: 'item',
-                            url: '/dashboard/'
+                            url: '/budgets/allbudgets'
                         }
                     ]
                     // target: true,
@@ -65,16 +65,16 @@ const chartData = {
                     url: '/dashboard/',
                     children: [
                         {
-                            id: 'gl',
+                            id: 'import_gl',
                             title: 'Import GL',
                             type: 'item',
-                            url: '/dashboard/'
+                            url: '/#'
                         },
                         {
-                            id: 'gl',
+                            id: 'export_gl',
                             title: 'Export GL',
                             type: 'item',
-                            url: '/dashboard/'
+                            url: '/#'
                         }
                     ]
                     // target: true,
@@ -91,59 +91,51 @@ const chartData = {
                             id: 'log_report',
                             title: 'Grant Log Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
                         {
                             id: 'listing_report',
                             title: 'Grant Listing Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
                         {
                             id: 'overview_report',
                             title: 'Grant Overview Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
                         {
                             id: 'idc_draw_report',
                             title: 'IDC Status Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
                         {
                             id: 'budget_to_actual_report',
                             title: 'Budget To Actual Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
 
                         {
                             id: 'idc_transfer_report',
                             title: 'IDC Transfer Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
-
                         {
                             id: 'idc_calc_report',
                             title: 'IDC Calculation Report',
                             type: 'item',
-                            url: '/dashboard/'
-
+                            url: '/#'
                         },
                         {
 
                             id: 'idc_accounting_report',
                             title: 'IDC Accounting Report',
                             type: 'item',
-                            url: '/dashboard/analytics'
+                            url: '/#'
                         },
                     ]
                 }
