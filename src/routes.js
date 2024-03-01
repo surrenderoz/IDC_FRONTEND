@@ -128,7 +128,9 @@ const ExtensionFullEventCalendar = React.lazy(() => import('./Demo/Extension/Ful
 const ExtensionFileUpload = React.lazy(() => import('./Demo/Extension/FileUpload'));
 const ExtensionImageCropper = React.lazy(() => import('./Demo/Extension/ImageCropper'));
 const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
+const AddGrant = React.lazy(() => import('./App/pages/grants/add-grant'));
 const routes = [
+    { path: '/grants/add-grants', exact: true, name: 'AddGrants', component: AddGrant },
     { path: '/dashboard/default', exact: true, name: 'Analytics', component: DashboardDefault },
     { path: '/dashboard/sales', exact: true, name: 'Crypto', component: DashboardSales },
     { path: '/dashboard/crm', exact: true, name: 'Crypto', component: DashboardCRM },
