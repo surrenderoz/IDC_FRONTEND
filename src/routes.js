@@ -129,7 +129,9 @@ const ExtensionFileUpload = React.lazy(() => import('./Demo/Extension/FileUpload
 const ExtensionImageCropper = React.lazy(() => import('./Demo/Extension/ImageCropper'));
 const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
 // Over Data Start from here
+const Dashboard = React.lazy(() => import('./Pages/Dashboard/Dashboard'));
 const AllGrants = React.lazy(() => import('./Pages/Grants/Allgrants'));
+const AllBudgets = React.lazy(() => import('./Pages/Budgets/AllBudget'));
 
 
 const routes = [
@@ -263,7 +265,9 @@ const routes = [
     { path: '/image-cropper', exact: true, name: 'Image Cropper', component: ExtensionImageCropper },
     { path: '/sample-page', exact: true, name: 'Sample Page', component: OtherSamplePage },
     /////Over path start here ///////
+    { path: '/dashboard', exact: true, name: 'Dashbaord', component: Dashboard },
     { path: '/grants/allgrants', exact: true, name: 'All Grants', component: AllGrants },
+    { path: '/budgets/allbudgets', exact: true, name: 'All Budgets', component: AllBudgets },
 
 ];
 export default routes;

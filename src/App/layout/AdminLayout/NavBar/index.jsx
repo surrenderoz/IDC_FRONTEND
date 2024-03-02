@@ -63,7 +63,7 @@ const NavBar = () => {
                     <span />
                 </a>
                 <a href={DEMO.BLANK_LINK} className="b-brand">
-                    <img id="main-logo" src={mainLogo} alt="" className="logo"/>
+                    <img id="main-logo" src={mainLogo} alt="Navajo" width={50} height={50} className="logo"/>
                 </a>
                 <a className="mob-toggler" href={DEMO.BLANK_LINK} onClick={() => setRightToggle(!rightToggle)}>
                     <i className="feather icon-more-vertical"/>
