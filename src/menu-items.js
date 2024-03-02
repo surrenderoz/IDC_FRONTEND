@@ -24,7 +24,7 @@ const chartData = {
                             id: 'add-grants',
                             title: 'Add Grants',
                             type: 'item',
-                            url: '/#'
+                            url: '/grants/add-grants'
                         },
                         {
                             id: 'all-grants',

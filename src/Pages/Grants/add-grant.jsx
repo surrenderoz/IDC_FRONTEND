@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Container, Form as UiForm, Row, Card } from 'react-bootstrap'
-import AdvanceModal from '../../../Demo/UIElements/Advance/Modal'
-import AnimatedModal from '../../components/AnimatedModal'
+import AnimatedModal from '../../App/components/AnimatedModal'
 
 
 const BUTTONs = [
