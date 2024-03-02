@@ -1,6 +1,6 @@
 const Config = {
     defaultPath: '/dashboard/default',
-    basename: '/react/default',
+    basename: '/',
     layout: 'vertical',
     subLayout: '',
     collapseMenu: false,
