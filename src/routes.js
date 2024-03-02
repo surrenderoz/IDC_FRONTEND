@@ -129,6 +129,12 @@ const ExtensionFileUpload = React.lazy(() => import('./Demo/Extension/FileUpload
 const ExtensionImageCropper = React.lazy(() => import('./Demo/Extension/ImageCropper'));
 const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
 const AddGrant = React.lazy(() => import('./App/pages/grants/add-grant'));
+// Over Data Start from here
+const Dashboard = React.lazy(() => import('./Pages/Dashboard/Dashboard'));
+const AllGrants = React.lazy(() => import('./Pages/Grants/Allgrants'));
+const AllBudgets = React.lazy(() => import('./Pages/Budgets/AllBudget'));
+
+
 const routes = [
     { path: '/grants/add-grants', exact: true, name: 'AddGrants', component: AddGrant },
     { path: '/dashboard/default', exact: true, name: 'Analytics', component: DashboardDefault },
@@ -259,6 +265,11 @@ const routes = [
     { path: '/full-calendar', exact: true, name: 'Full Calendar', component: ExtensionFullEventCalendar },
     { path: '/file-upload', exact: true, name: 'File Upload', component: ExtensionFileUpload },
     { path: '/image-cropper', exact: true, name: 'Image Cropper', component: ExtensionImageCropper },
-    { path: '/sample-page', exact: true, name: 'Sample Page', component: OtherSamplePage }
+    { path: '/sample-page', exact: true, name: 'Sample Page', component: OtherSamplePage },
+    /////Over path start here ///////
+    { path: '/dashboard', exact: true, name: 'Dashbaord', component: Dashboard },
+    { path: '/grants/allgrants', exact: true, name: 'All Grants', component: AllGrants },
+    { path: '/budgets/allbudgets', exact: true, name: 'All Budgets', component: AllBudgets },
+
 ];
 export default routes;
