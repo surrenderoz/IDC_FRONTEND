@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { useEffect } from 'react';
-import { Row, Col, Card, Table } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Row, Col, Card, Table, Button, Modal } from 'react-bootstrap';
 import * as $ from 'jquery';
+import AddGrant from './add-grant';
 
 $.DataTable = require('datatables.net-bs');
 require('jszip');
@@ -16,12 +17,6 @@ require('datatables.net-buttons/js/buttons.print.js');
 require('datatables.net-colreorder');
 require('datatables.net-keytable');
 require('datatables.net-responsive-bs');
-require('datatables.net-rowgroup');
-require('datatables.net-rowreorder');
-require('datatables.net-scroller');
-require('datatables.net-select');
-require('datatables.net-fixedcolumns');
-require('datatables.net-fixedheader');
 
 const names = [
     {
@@ -74,61 +69,10 @@ const names = [
         IDC_Percentage: '16%',
         IDC_Amt: '$50,000',
         IDC_Limit: '$20,000'
-    },
+    }
 ];
 
 function atable() {
-    let tableZero = '#data-table-zero';
-    $.fn.dataTable.ext.errMode = 'throw';
-    // @ts-ignore
-    $(tableZero).DataTable({
-        data: names,
-        order: [[0, 'asc']],
-        columns: [
-            {
-                data: 'id',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'name',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'position',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'office',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'age',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'date',
-                render: function (data, type, row) {
-                    return data;
-                }
-            },
-            {
-                data: 'salary',
-                render: function (data, type, row) {
-                    return data;
-                }
-            }
-        ]
-    });
     let tableButton = '#datatable-button';
     let tableBtns = [
         {
@@ -262,6 +206,7 @@ function atable() {
 }
 
 function Allgrants() {
+    const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
         atable();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -275,6 +220,14 @@ function Allgrants() {
                             <Card.Title as="h5">All Grants</Card.Title>
                         </Card.Header>
                         <Card.Body>
+                            <Row className="align-items-center m-l-0">
+                                <Col />
+                                <Col className="text-right mb-2">
+                                    <Button variant="success" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
+                                        <i className="feather icon-plus" /> Add Grant
+                                    </Button>
+                                </Col>
+                            </Row>
                             <Table striped hover responsive bordered className="table table-condensed" id="datatable-button">
                                 <thead>
                                     <tr>
@@ -298,6 +251,11 @@ function Allgrants() {
                             </Table>
                         </Card.Body>
                     </Card>
+                    <Modal show={isOpen} onHide={() => setIsOpen(false)} size="lg">
+                        <Modal.Body>
+                            <AddGrant />
+                        </Modal.Body>
+                    </Modal>
                 </Col>
             </Row>
         </>

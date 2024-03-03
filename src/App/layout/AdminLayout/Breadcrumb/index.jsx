@@ -14,7 +14,7 @@ const Breadcrumb = (props) => {
                     getCollapse(collapse);
                 }
                 else if (collapse.type && collapse.type === 'item') {
-                    if (document.location.pathname === config.basename + collapse.url) {
+                    if (document.location.pathname === collapse.url) {
                         setItem(collapse);
                         setMain(item);
                     }
