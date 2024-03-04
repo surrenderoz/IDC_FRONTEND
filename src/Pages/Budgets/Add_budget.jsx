@@ -90,17 +90,12 @@ const AddBudget = () => {
     return (
         <Container fluid>
             <Card>
-                <Card.Header>
-                    <Row>
-                        <Col>
-                            <Card.Title as="h5">Add Budget</Card.Title>
-                            <Col className="text-right mb-2">
-                                <Button variant="primary" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
-                                    <i className="feather icon-download-cloud" /> Import Budget
-                                </Button>
-                            </Col>
-                        </Col>
-                    </Row>
+                <Card.Header className='d-flex justify-content-between'>
+                    <Card.Title as="h5">Add Budget</Card.Title>
+
+                    <Button variant="primary" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
+                        <i className="feather icon-download-cloud" /> Import Budget
+                    </Button>
                 </Card.Header>
                 <Card.Body>
                     <Row
@@ -171,9 +166,9 @@ const AddBudget = () => {
                             <Col sm={6}>
                                 <div className="form-group fill">
                                     <label className="floating-label" htmlFor="Icon">
-                                        Profie Image
+                                        Upload Budget File
                                     </label>
-                                    <input type="file" className="form-control" id="Icon" placeholder="Profie Image" />
+                                    <input type="file" className="form-control" id="Icon" placeholder="Budget File" />
                                 </div>
                             </Col>
                         </Row>
