@@ -15,7 +15,7 @@ jobs:
       run: |
         sudo apt-get install sshpass
         echo "installed sshpass"
-        sshpass ${ { secrets.SSH_KEY }} ubuntu@18.191.23.206
+        sshpass key ${ { secrets.SSH_KEY }} ubuntu@18.191.23.206
         echo $HOSTNAME
         cd
         cd /home/ubuntu/IDC_FRONTEND
