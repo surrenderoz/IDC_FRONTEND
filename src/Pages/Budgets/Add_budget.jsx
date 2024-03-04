@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form as UiForm, Row, Card } from 'react-bootstrap';
+import { Button, Col, Container, Form as UiForm, Row, Card, Modal } from 'react-bootstrap';
 import AnimatedModal from '../../App/components/AnimatedModal';
-
-
 
 const FORMs = {
     'Budget Details': [
@@ -42,14 +40,14 @@ const FORMs = {
                 name: 'glLedger',
                 value: '',
                 type: 'number',
-                placeholder: 'XXXXX',
+                placeholder: 'XXXXX'
             },
             {
                 name: 'glDesc',
                 label: 'Gl Description',
                 placeholder: 'gl description',
                 type: 'text'
-            },
+            }
         ],
         [
             {
@@ -69,17 +67,15 @@ const FORMs = {
                 label: 'Year',
                 placeholder: 'e.g year',
                 type: 'date'
-            },
-
+            }
         ]
-    ],
-
+    ]
 };
 
 const AddBudget = () => {
     const [formInputs, setFormInputs] = useState({});
     const [showModal, setShowModal] = useState(false);
-
+    const [isOpen, setIsOpen] = useState(false);
 
     const onChange = (key, val) => {
         setFormInputs((old) => ({ ...old, [key]: val }));
@@ -89,14 +85,22 @@ const AddBudget = () => {
         const strinfyFormsData = JSON.stringify(formInputs);
         localStorage.setItem('@BUDGET_LIST', strinfyFormsData);
         return setShowModal(true);
-
     };
 
     return (
         <Container fluid>
             <Card>
                 <Card.Header>
-                    <Card.Title as="h5">Add Budget</Card.Title>
+                    <Row>
+                        <Col>
+                            <Card.Title as="h5">Add Budget</Card.Title>
+                            <Col className="text-right mb-2">
+                                <Button variant="primary" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
+                                    <i className="feather icon-download-cloud" /> Import Budget
+                                </Button>
+                            </Col>
+                        </Col>
+                    </Row>
                 </Card.Header>
                 <Card.Body>
                     <Row
@@ -108,9 +112,7 @@ const AddBudget = () => {
                             alignItems: 'center',
                             gap: 4
                         }}
-                    >
-
-                    </Row>
+                    ></Row>
                     <UiForm>
                         <Container style={{ padding: 5, gap: 5 }}>
                             {FORMs?.['Budget Details'].map((rowsList) => (
@@ -155,6 +157,34 @@ const AddBudget = () => {
                         </Card.Footer>
                     </AnimatedModal>
                 </Card.Body>
+                <Modal show={isOpen} onHide={() => setIsOpen(false)} size="lg">
+                    <Modal.Body>
+                        <Row>
+                            <Col sm={6}>
+                                <div className="form-group fill">
+                                    <label className="floating-label" htmlFor="Name">
+                                        Name
+                                    </label>
+                                    <input type="text" className="form-control" id="Name" placeholder="Name" />
+                                </div>
+                            </Col>
+                            <Col sm={6}>
+                                <div className="form-group fill">
+                                    <label className="floating-label" htmlFor="Icon">
+                                        Profie Image
+                                    </label>
+                                    <input type="file" className="form-control" id="Icon" placeholder="Profie Image" />
+                                </div>
+                            </Col>
+                        </Row>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="danger" onClick={() => setIsOpen(false)}>
+                            Cancel
+                        </Button>
+                        <Button variant="primary">Submit</Button>
+                    </Modal.Footer>
+                </Modal>
             </Card>
         </Container>
     );
