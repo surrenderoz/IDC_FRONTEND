@@ -9,13 +9,12 @@ jobs:
     - name: IDC Publish
       uses: appleboy/ssh-action@v0.1.9
       with: 
-        key: ${ { secrets.SSH_KEY }}
         host: 18.191.23.206
+        key: ${ { secrets.idc_key }}
         username: ${ { secrets.USER }}     
         run: |
           # sudo apt-get install sshpass
           echo "installed sshpass"
-          # sshpass --key ${ { secrets.SSH_KEY }} ubuntu@18.191.23.206
           echo $HOSTNAME
           cd
           cd /home/ubuntu/IDC_FRONTEND
