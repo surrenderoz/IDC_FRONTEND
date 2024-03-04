@@ -223,7 +223,7 @@ function Allgrants() {
                             <Row className="align-items-center m-l-0">
                                 <Col />
                                 <Col className="text-right mb-2">
-                                    <Button variant="success" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
+                                    <Button variant="primary" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
                                         <i className="feather icon-plus" /> Add Grant
                                     </Button>
                                 </Col>
