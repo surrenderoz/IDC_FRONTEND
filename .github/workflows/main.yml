@@ -7,18 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: IDC Publish
-      env:
-        SSH_PRIVATE_KEY: ${ { secrets.SSH_KEY }}
-        REMOTE_HOST: ${ { secrets.HOST }}
-        REMOTE_USER: ${ { secrets.USER }}
-      run: |
-        echo "installed sshpass"
-        echo $HOSTNAME
-        cd
-        cd /home/ubuntu/IDC_FRONTEND
-        git pull
-        yarn
-        yarn build
-        cp /build/* /var/www/idc/html/
-        sudo systemctl restart nginx
+      uses: matheusvanzan/sshpass-action@v2
+      with: 
+        key: ${ { secrets.SSH_KEY }}
+        host: ${ { secrets.HOST }}
+        user: ${ { secrets.USER }}     
+        run: |
+          echo "installed sshpass"
+          echo $HOSTNAME
+          cd
+          cd /home/ubuntu/IDC_FRONTEND
+          git pull
+          yarn
+          yarn build
+          cp /build/* /var/www/idc/html/
+          sudo systemctl restart nginx
     
