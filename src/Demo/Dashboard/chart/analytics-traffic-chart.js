@@ -9,7 +9,7 @@ const chartData = {
             }
         },
         colors: ['#4680ff', '#0e9e4a', '#00acc1', '#ffa21d', '#ff5252', '#7759de'],
-        labels: ['Facebook ads', 'Amazon ads', 'Youtube videos', 'Google adsense', 'Twitter ads', 'News ads'],
+        labels: ['Grant Name 1', 'Grant Name 2', 'Grant Name 3', 'Grant Name 4', 'Grant Name 5', 'Grant Name 6'],
         legend: {
             show: true,
             position: 'bottom'
