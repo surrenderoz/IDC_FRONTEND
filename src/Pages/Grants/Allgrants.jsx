@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Row, Col, Card, Table, Button, Modal } from 'react-bootstrap';
 import * as $ from 'jquery';
-import AddGrant from './add-grant';
+import AddGrant from './Add_grant';
 
 $.DataTable = require('datatables.net-bs');
 require('jszip');
