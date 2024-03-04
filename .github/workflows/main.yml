@@ -13,6 +13,7 @@ jobs:
         REMOTE_USER: ${ { secrets.USER }}
       run: |
         echo "installed sshpass"
+        echo $HOSTNAME
         cd
         cd /home/ubuntu/IDC_FRONTEND
         git pull
