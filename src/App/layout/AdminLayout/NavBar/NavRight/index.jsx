@@ -24,7 +24,7 @@ const NavRight = (props) => {
                             </div>
                             <div style={{ height: '300px' }}>
                                 <PerfectScrollbar>
-                                    <ul className="noti-body">
+                                    {/* <ul className="noti-body">
                                         <li className="n-title">
                                             <p className="m-b-0">NEW</p>
                                         </li>
@@ -90,7 +90,7 @@ const NavRight = (props) => {
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </PerfectScrollbar>
                             </div>
                             <div className="noti-footer">
@@ -123,7 +123,7 @@ const NavRight = (props) => {
                                         <i className="feather icon-user"/> Profile
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a href={DEMO.BLANK_LINK} className="dropdown-item">
                                         <i className="feather icon-mail"/> My Messages
                                     </a>
@@ -132,7 +132,7 @@ const NavRight = (props) => {
                                     <a href={DEMO.BLANK_LINK} className="dropdown-item">
                                         <i className="feather icon-lock"/> Lock Screen
                                     </a>
-                                </li>
+                                </li> */}
                             </ul>
                         </Dropdown.Menu>
                     </Dropdown>

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { useEffect } from 'react';
-import { Row, Col, Card, Table } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Row, Col, Card, Table, Modal, Button } from 'react-bootstrap';
 import * as $ from 'jquery';
+import AddBudget from './Add_budget';
 
 const names = [
     {
@@ -129,6 +130,8 @@ function atable() {
 }
 
 function Allbudgets() {
+    const [isOpen, setIsOpen] = useState(false);
+
     useEffect(() => {
         atable();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -142,6 +145,14 @@ function Allbudgets() {
                             <Card.Title as="h5">All Budgets</Card.Title>
                         </Card.Header>
                         <Card.Body>
+                            <Row className="align-items-center m-l-0">
+                                <Col />
+                                <Col className="text-right mb-2">
+                                    <Button variant="success" className="btn-sm btn-round has-ripple" onClick={() => setIsOpen(true)}>
+                                        <i className="feather icon-plus" /> Add Budget
+                                    </Button>
+                                </Col>
+                            </Row>
                             <Table striped hover responsive bordered className="table table-condensed" id="data-table-zero">
                                 <thead>
                                     <tr>
@@ -171,6 +182,11 @@ function Allbudgets() {
                             </Table>
                         </Card.Body>
                     </Card>
+                    <Modal show={isOpen} onHide={() => setIsOpen(false)} size="lg">
+                        <Modal.Body>
+                            <AddBudget />
+                        </Modal.Body>
+                    </Modal>
                 </Col>
             </Row>
         </>

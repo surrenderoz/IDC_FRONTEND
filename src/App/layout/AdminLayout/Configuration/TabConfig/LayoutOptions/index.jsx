@@ -12,13 +12,13 @@ const LayoutOptions = () => {
     const onChangeRtlLayout = () => dispatch({ type: actionTypes.RTL_LAYOUT });
     const onChangeNavFixedLayout = () => dispatch({ type: actionTypes.NAV_FIXED_LAYOUT });
     const onChangeHeaderFixedLayout = () => dispatch({ type: actionTypes.HEADER_FIXED_LAYOUT });
-    const onChangeBoxLayout = () => dispatch({ type: actionTypes.BOX_LAYOUT });
+    // const onChangeBoxLayout = () => dispatch({ type: actionTypes.BOX_LAYOUT });
     let layoutOption = (<div className="form-group mb-0">
-            <div className="switch switch-primary d-inline m-r-10">
+            {/* <div className="switch switch-primary d-inline m-r-10">
                 <input type="checkbox" id="box-layouts" checked={boxLayout} onChange={onChangeBoxLayout}/>
                 <label htmlFor="box-layouts" className="cr"/>
             </div>
-            <label>Box Layouts</label>
+            <label>Box Layouts</label> */}
         </div>);
     let layoutOptionHeaderFixWithoutBox = '';
     let layoutOptionNavFixWithoutBox = '';

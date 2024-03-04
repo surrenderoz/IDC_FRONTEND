@@ -17,7 +17,7 @@ const chartData = {
                     id: 'grants',
                     title: 'Grants',
                     type: 'collapse',
-                    icon: 'feather icon-home',
+                    icon: 'feather icon-layers',
                     url: '/dashboard/',
                     children: [
                         {
@@ -39,7 +39,7 @@ const chartData = {
                     id: 'budget',
                     title: 'Budget',
                     type: 'collapse',
-                    icon: 'feather icon-home',
+                    icon: 'feather icon-briefcase',
                     url: '/dashboard/',
                     children: [
                         {
@@ -61,7 +61,7 @@ const chartData = {
                     id: 'general_ledger',
                     title: 'General Ledger',
                     type: 'collapse',
-                    icon: 'feather icon-home',
+                    icon: 'feather icon-book',
                     url: '/dashboard/',
                     children: [
                         {
