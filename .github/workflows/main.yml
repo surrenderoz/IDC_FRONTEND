@@ -10,12 +10,12 @@ jobs:
       uses: matheusvanzan/sshpass-action@v2
       with: 
         key: ${ { secrets.SSH_KEY }}
-        host: ${ { secrets.HOST }}
+        host: 18.191.23.206
         user: ${ { secrets.USER }}     
         run: |
           sudo apt-get install sshpass
           echo "installed sshpass"
-          # sshpass
+          sshpass ${ { secrets.SSH_KEY }} ubuntu@18.191.23.206
           echo $HOSTNAME
           cd
           cd /home/ubuntu/IDC_FRONTEND
