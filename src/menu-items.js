@@ -24,7 +24,7 @@ const chartData = {
                             id: 'add-grants',
                             title: 'Add Grants',
                             type: 'item',
-                            url: '/grants/add-grants'
+                            url: '/grants/add_grants'
                         },
                         {
                             id: 'all-grants',
@@ -46,7 +46,7 @@ const chartData = {
                             id: 'add-budget',
                             title: 'Add Budget',
                             type: 'item',
-                            url: '/#'
+                            url: '/budgets/add_budget'
                         },
                         {
                             id: 'all-budget',
@@ -84,7 +84,7 @@ const chartData = {
                     id: 'reports',
                     title: 'Reports',
                     type: 'collapse',
-                    icon: 'feather icon-home',
+                    icon: 'feather icon-file-text',
                     url: '/dashboard/',
                     children: [
                         {
