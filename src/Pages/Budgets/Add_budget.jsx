@@ -2,146 +2,101 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Form as UiForm, Row, Card } from 'react-bootstrap';
 import AnimatedModal from '../../App/components/AnimatedModal';
 
-const BUTTONs = ['Grants Details', 'IDC Confing', 'Department'];
 
 
 const FORMs = {
-    'Grants Details': [
+    'Budget Details': [
         [
             {
-                label: 'Award No',
-                name: 'awardNo',
+                label: 'Amount',
+                name: 'amt',
                 value: '',
+                type: 'number',
                 placeholder: 'XXXXX'
             },
             {
-                label: 'Document No.',
-                name: 'docNo',
+                label: 'Acc. code',
+                name: 'accCode',
                 value: '',
+                type: 'number',
                 placeholder: 'XXXXX'
             },
             {
-                label: 'Grant Name',
-                name: 'grantName',
+                label: 'Fund',
+                name: 'fundName',
                 value: '',
-                placeholder: 'e.g Road'
+                type: 'text',
+                placeholder: 'e.g Road project'
             }
         ],
         [
             {
-                label: 'Grant Description',
-                name: 'grantDec',
+                label: 'Dept',
+                name: 'dept',
                 value: '',
-                placeholder: 'descr',
+                placeholder: 'depart name',
                 type: 'text'
             },
             {
-                label: 'Start Period',
-                name: 'startDate',
+                label: 'General Ledger',
+                name: 'glLedger',
                 value: '',
-                placeholder: '1 year',
-                type: 'date'
+                type: 'number',
+                placeholder: 'XXXXX',
             },
             {
-                name: 'endDate',
-                label: 'End Period',
-                value: '',
-                placeholder: '3 year',
-                type: 'date'
-            }
+                name: 'glDesc',
+                label: 'Gl Description',
+                placeholder: 'gl description',
+                type: 'text'
+            },
         ],
         [
             {
-                name: 'grantAmt',
-                label: 'Grant Amount',
-                placeholder: 'e.g 134,1234',
-                type: 'number'
+                name: 'transDesc',
+                label: 'Trans Desc',
+                placeholder: 'trans desc',
+                type: 'text'
             },
-            {},
-            {}
+            {
+                name: 'budgetDate',
+                label: 'Budget Date',
+                placeholder: 'budget date',
+                type: 'date'
+            },
+            {
+                name: 'year',
+                label: 'Year',
+                placeholder: 'e.g year',
+                type: 'date'
+            },
+
         ]
     ],
-    'IDC Confing': [
-        [
-            {
-                label: 'IDC Percentage',
-                name: 'idcPercetange',
-                type: 'number',
-                placeholder: 'e.g 9%'
-            },
-            {
-                label: 'IDC Amount',
-                name: 'idcAmt',
-                type: 'number',
-                placeholder: '233,234'
-            },
-            {
-                label: 'Threshold Limit',
-                name: 'threshHoldLimit',
-                type: 'number',
-                placeholder: '534,345'
-            }
-        ],
-        [
-            {
-                label: 'Fund No. as mention in GL',
-                name: 'fundNo.',
-                type: 'number',
-                placeholder: 'e.g 4234'
-            },
-            {},
-            {}
-        ]
-    ],
-    Department: [
-        [
-            {
-                label: 'Major Department',
-                name: 'majorDepartmentName',
-                placeholder: 'e.g major',
-                value: ''
-            },
-            {
-                label: 'Sub Department',
-                name: 'subDepartmentName',
-                placeholder: 'e.g sundepartment',
-                value: ''
-            },
-            {
-                label: 'Department as mention in GL',
-                name: 'glDepartmentName',
-                placeholder: 'e.g gldepart',
-                value: ''
-            }
-        ]
-    ]
+
 };
 
 const AddBudget = () => {
-    const [selectedBtn, setSelectedBtn] = useState(0);
     const [formInputs, setFormInputs] = useState({});
     const [showModal, setShowModal] = useState(false);
 
-    const isSubmit = selectedBtn === BUTTONs.length - 1;
 
     const onChange = (key, val) => {
         setFormInputs((old) => ({ ...old, [key]: val }));
     };
 
     const handleBtn = () => {
-        if (isSubmit) {
-            const strinfyFormsData = JSON.stringify(formInputs);
-            localStorage.setItem('@GRANTS_LIST', strinfyFormsData);
-            return setShowModal(true);
-        }
-        setSelectedBtn((old) => (isSubmit ? old : old + 1));
+        const strinfyFormsData = JSON.stringify(formInputs);
+        localStorage.setItem('@BUDGET_LIST', strinfyFormsData);
+        return setShowModal(true);
+
     };
 
     return (
         <Container fluid>
             <Card>
                 <Card.Header>
-                    <Card.Title as="h5">Add Grants</Card.Title>
+                    <Card.Title as="h5">Add Budget</Card.Title>
                 </Card.Header>
                 <Card.Body>
                     <Row
@@ -154,20 +109,11 @@ const AddBudget = () => {
                             gap: 4
                         }}
                     >
-                        {BUTTONs?.map((item, i) => (
-                            <Button
-                                key={i.toString()}
-                                style={{ flex: 1 }}
-                                variant={selectedBtn === i ? 'primary' : 'secondary'}
-                                onClick={() => setSelectedBtn(i)}
-                            >
-                                {item}
-                            </Button>
-                        ))}
+
                     </Row>
                     <UiForm>
                         <Container style={{ padding: 5, gap: 5 }}>
-                            {FORMs?.[BUTTONs[selectedBtn]].map((rowsList) => (
+                            {FORMs?.['Budget Details'].map((rowsList) => (
                                 <Row>
                                     {rowsList.map((form, formKey) => (
                                         <Col key={form?.name || formKey.toString()}>
@@ -191,13 +137,13 @@ const AddBudget = () => {
                             ))}
                         </Container>
                         <Button variant="primary" onClick={handleBtn} type={'button'}>
-                            {isSubmit ? 'Submit' : 'Next'}
+                            Submit
                         </Button>
                     </UiForm>
                     <AnimatedModal animation={'zoom'} visible={showModal} onClose={() => setShowModal(false)}>
                         <Card.Body>
                             <Card.Title className="text-center" as="h5">
-                                Grant Name: <span style={{ color: 'dodgerblue' }}>{formInputs?.grantName}</span> <br /> <br /> added{' '}
+                                Fund Name: <span style={{ color: 'dodgerblue' }}>{formInputs?.fundName}</span> <br /> <br /> added{' '}
                                 <span style={{ color: 'green' }}>succefully!!</span>{' '}
                             </Card.Title>
                         </Card.Body>
