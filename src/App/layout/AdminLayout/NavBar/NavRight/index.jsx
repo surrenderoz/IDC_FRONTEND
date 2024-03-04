@@ -5,12 +5,37 @@ import DEMO from '../../../../../store/constant';
 import Avatar1 from '../../../../../assets/images/user/avatar-1.jpg';
 import Avatar2 from '../../../../../assets/images/user/avatar-2.jpg';
 const NavRight = (props) => {
-    return (<>
+    return (
+        <>
             <ul className="navbar-nav ml-auto">
                 <li>
                     <Dropdown drop={!props.rtlLayout ? 'left' : 'right'} className="dropdown" alignRight={!props.rtlLayout}>
                         <Dropdown.Toggle variant={'link'} id="dropdown-basic">
-                            <i className="feather icon-bell icon"/>
+                            <i className="feather icon-heart icon" />
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu alignRight className="notification">
+                            <div className="noti-head bg-dark">
+                                <h6 className="d-inline-block m-b-0">Favourite Grants</h6>
+                                {/* <div className="float-right">
+                                    <a href={DEMO.BLANK_LINK} className="m-r-10">
+                                        mark as read
+                                    </a>
+                                    <a href={DEMO.BLANK_LINK}>clear all</a>
+                                </div> */}
+                            </div>
+                            <div style={{ height: '300px' }}>
+                                <PerfectScrollbar></PerfectScrollbar>
+                            </div>
+                            <div className="noti-footer">
+                                <a href={DEMO.BLANK_LINK}>show all</a>
+                            </div>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
+                <li>
+                    <Dropdown drop={!props.rtlLayout ? 'left' : 'right'} className="dropdown" alignRight={!props.rtlLayout}>
+                        <Dropdown.Toggle variant={'link'} id="dropdown-basic">
+                            <i className="feather icon-bell icon" />
                         </Dropdown.Toggle>
                         <Dropdown.Menu alignRight className="notification">
                             <div className="noti-head bg-dark">
@@ -102,42 +127,33 @@ const NavRight = (props) => {
                 <li>
                     <Dropdown drop={!props.rtlLayout ? 'left' : 'right'} className="dropdown" alignRight={!props.rtlLayout}>
                         <Dropdown.Toggle variant={'link'} id="dropdown-basic">
-                            <i className="icon feather icon-user"/>
+                            <i className="icon feather icon-user" />
                         </Dropdown.Toggle>
                         <Dropdown.Menu alignRight className="profile-notification">
                             <div className="pro-head bg-dark">
-                                <img src={Avatar1} className="img-radius" alt="User Profile"/>
+                                <img src={Avatar1} className="img-radius" alt="User Profile" />
                                 <span>John Doe</span>
                                 <a href={DEMO.BLANK_LINK} className="dud-logout" title="Logout">
-                                    <i className="feather icon-log-out"/>
+                                    <i className="feather icon-log-out" />
                                 </a>
                             </div>
                             <ul className="pro-body">
                                 <li>
                                     <a href={DEMO.BLANK_LINK} className="dropdown-item">
-                                        <i className="feather icon-settings"/> Settings
+                                        <i className="feather icon-settings" /> Settings
                                     </a>
                                 </li>
                                 <li>
                                     <a href={DEMO.BLANK_LINK} className="dropdown-item">
-                                        <i className="feather icon-user"/> Profile
+                                        <i className="feather icon-user" /> Profile
                                     </a>
                                 </li>
-                                {/* <li>
-                                    <a href={DEMO.BLANK_LINK} className="dropdown-item">
-                                        <i className="feather icon-mail"/> My Messages
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={DEMO.BLANK_LINK} className="dropdown-item">
-                                        <i className="feather icon-lock"/> Lock Screen
-                                    </a>
-                                </li> */}
                             </ul>
                         </Dropdown.Menu>
                     </Dropdown>
                 </li>
             </ul>
-        </>);
+        </>
+    );
 };
 export default NavRight;
