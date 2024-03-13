@@ -2,57 +2,54 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Form as UiForm, Row, Card } from 'react-bootstrap';
 import AnimatedModal from '../../App/components/AnimatedModal';
 
-const BUTTONs = ['Grants Details', 'IDC Confing', 'Department'];
-
-///<--  Grants Details
-// Award No(same as Grant No.)
-// Document No.
-// Grant Name
-// Start Period
-// End Period
-
-//@ Major
-
-// Major Department
-// Sub Department
-// Fund No.as mention in GL
-// Department as mention in GL
-// Grant Description
-// Grant Amount
-// IDC Percentage
-// IDC Amount
-// Threshold Limit
+const BUTTONs = ['Grants Details', 'IDC Confing'];
 
 const FORMs = {
     'Grants Details': [
         [
             {
-                label: 'Award No ( same as Grant No.)',
-                name: 'awardNo',
+                label: 'Grant Award ID',
+                name: 'grant_award_no',
                 value: '',
                 placeholder: 'XXXXX'
             },
             {
-                label: 'Document No.',
-                name: 'docNo',
+                label: 'Grant Agency.',
+                name: 'grant_agency',
                 value: '',
-                placeholder: 'XXXXX'
+                placeholder: 'Department of Defense'
             },
             {
-                label: 'Grant Name',
-                name: 'grantName',
+                label: 'Program Name',
+                name: 'program_name',
                 value: '',
-                placeholder: 'e.g Road'
+                placeholder: 'Road'
             }
         ],
         [
             {
-                label: 'Grant Description',
-                name: 'grantDec',
+                label: 'Fund No',
+                name: 'fund_no',
                 value: '',
-                placeholder: 'descr',
+                placeholder: 'Fund no',
+                type: 'XXXX-XXX'
+            },
+            {
+                label: 'Fund Name',
+                name: 'fund_name',
+                value: '',
+                placeholder: 'Fund name',
                 type: 'text'
             },
+            {
+                label: 'Fund Amount',
+                name: 'fund_amount',
+                value: '',
+                placeholder: 'Fund Amount',
+                type: 'number'
+            }
+        ],
+        [
             {
                 label: 'Start Period',
                 name: 'startDate',
@@ -61,22 +58,12 @@ const FORMs = {
                 type: 'date'
             },
             {
-                name: 'endDate',
                 label: 'End Period',
+                name: 'endDate',
                 value: '',
                 placeholder: '3 year',
                 type: 'date'
             }
-        ],
-        [
-            {
-                name: 'grantAmt',
-                label: 'Grant Amount',
-                placeholder: 'e.g 134,1234',
-                type: 'number'
-            },
-            {},
-            {}
         ]
     ],
     'IDC Confing': [
@@ -85,57 +72,47 @@ const FORMs = {
                 label: 'IDC Percentage',
                 name: 'idcPercetange',
                 type: 'number',
-                placeholder: 'e.g 9%'
+                placeholder: '9%'
             },
             {
                 label: 'IDC Amount',
                 name: 'idcAmt',
                 type: 'number',
-                placeholder: '233,234'
+                placeholder: '$233,234'
             },
             {
                 label: 'Threshold Limit',
                 name: 'threshHoldLimit',
                 type: 'number',
-                placeholder: '534,345'
-            }
-        ],
-        [
-            {
-                label: 'Fund No. as mention in GL',
-                name: 'fundNo.',
-                type: 'number',
-                placeholder: 'e.g 4234'
-            },
-            {},
-            {}
-        ]
-    ],
-    Department: [
-        [
-            {
-                label: 'Major Department',
-                name: 'majorDepartmentName',
-                placeholder: 'e.g major',
-                value: ''
-            },
-            {
-                label: 'Sub Department',
-                name: 'subDepartmentName',
-                placeholder: 'e.g sundepartment',
-                value: ''
-            },
-            {
-                label: 'Department as mention in GL',
-                name: 'glDepartmentName',
-                placeholder: 'e.g gldepart',
-                value: ''
+                placeholder: '$534,345'
             }
         ]
     ]
+    // Department: [
+    //     [
+    //         {
+    //             label: 'Major Department',
+    //             name: 'majorDepartmentName',
+    //             placeholder: 'e.g major',
+    //             value: ''
+    //         },
+    //         {
+    //             label: 'Sub Department',
+    //             name: 'subDepartmentName',
+    //             placeholder: 'e.g sundepartment',
+    //             value: ''
+    //         },
+    //         {
+    //             label: 'Department as mention in GL',
+    //             name: 'glDepartmentName',
+    //             placeholder: 'e.g gldepart',
+    //             value: ''
+    //         }
+    //     ]
+    // ]
 };
 
-const AddGrant = () => {
+const AddFund = () => {
     const [selectedBtn, setSelectedBtn] = useState(0);
     const [formInputs, setFormInputs] = useState({});
     const [showModal, setShowModal] = useState(false);
@@ -159,7 +136,7 @@ const AddGrant = () => {
         <Container fluid>
             <Card>
                 <Card.Header>
-                    <Card.Title as="h5">Add Grants</Card.Title>
+                    <Card.Title as="h5">Add Funds</Card.Title>
                 </Card.Header>
                 <Card.Body>
                     <Row
@@ -215,14 +192,14 @@ const AddGrant = () => {
                     <AnimatedModal animation={'zoom'} visible={showModal} onClose={() => setShowModal(false)}>
                         <Card.Body>
                             <Card.Title className="text-center" as="h5">
-                                Grant Name: <span style={{ color: 'dodgerblue' }}>{formInputs?.grantName}</span> <br /> <br /> added{' '}
-                                <span style={{ color: 'green' }}>succefully!!</span>{' '}
+                                Grant Name: <span style={{ color: 'dodgerblue' }}>{formInputs?.grantName}</span> <br /> <br /> Added{' '}
+                                <span style={{ color: 'green' }}>Succefully!!</span>{' '}
                             </Card.Title>
                         </Card.Body>
 
                         <Card.Footer className="text-center">
                             <button onClick={() => setShowModal(false)} className="btn btn-primary md-close">
-                                Close Me!!
+                                Close!!
                             </button>
                         </Card.Footer>
                     </AnimatedModal>
@@ -232,4 +209,4 @@ const AddGrant = () => {
     );
 };
 
-export default AddGrant;
+export default AddFund;

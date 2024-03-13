@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form as UiForm, Row, Card, Modal } from 'react-bootstrap';
+import { Button, Col, Container, Form as UiForm, Row, Card, Modal, Input } from 'react-bootstrap';
 import AnimatedModal from '../../App/components/AnimatedModal';
 
 const FORMs = {
@@ -97,6 +97,15 @@ const AddBudget = () => {
                         <i className="feather icon-download-cloud" /> Import Budget
                     </Button>
                 </Card.Header>
+                {/* <Card.Header>
+                    <Card.Title as="h5">Add Budget</Card.Title>
+                    <label htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                            Upload
+                        </Button>
+                    </label>
+                </Card.Header> */}
                 <Card.Body>
                     <Row
                         style={{

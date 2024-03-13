@@ -10,53 +10,53 @@ const chartData = {
                     title: 'Dashboard',
                     type: 'item',
                     icon: 'feather icon-home',
-                    url: '/dashboard/'
+                    url: '/dashboard/',
                     // target: true,
                 },
                 {
                     id: 'grants',
-                    title: 'Grants',
-                    type: 'collapse',
+                    title: 'Funds',
+                    type: 'item',
                     icon: 'feather icon-layers',
-                    url: '/dashboard/',
-                    children: [
-                        {
-                            id: 'add-grants',
-                            title: 'Add Grants',
-                            type: 'item',
-                            url: '/grants/add_grants'
-                        },
-                        {
-                            id: 'all-grants',
-                            title: 'All Grants',
-                            type: 'item',
-                            url: '/grants/allgrants'
-                        }
-                    ]
+                    url: '/funds/allfunds',
+                    // children: [
+                    //     {
+                    //         id: 'add-grants',
+                    //         title: 'Add Grants',
+                    //         type: 'item',
+                    //         url: '/grants/add_grants'
+                    //     },
+                    //     {
+                    //         id: 'all-grants',
+                    //         title: 'All Grants',
+                    //         type: 'item',
+                    //         url: '/grants/allgrants'
+                    //     }
+                    // ]
                     // target: true,
                 },
-                {
-                    id: 'budget',
-                    title: 'Budget',
-                    type: 'collapse',
-                    icon: 'feather icon-briefcase',
-                    url: '/dashboard/',
-                    children: [
-                        {
-                            id: 'add-budget',
-                            title: 'Add Budget',
-                            type: 'item',
-                            url: '/budgets/add_budget'
-                        },
-                        {
-                            id: 'all-budget',
-                            title: 'Budget List',
-                            type: 'item',
-                            url: '/budgets/allbudgets'
-                        }
-                    ]
-                    // target: true,
-                },
+                // {
+                //     id: 'budget',
+                //     title: 'Budget',
+                //     type: 'collapse',
+                //     icon: 'feather icon-briefcase',
+                //     url: '/dashboard/',
+                //     children: [
+                //         {
+                //             id: 'add-budget',
+                //             title: 'Add Budget',
+                //             type: 'item',
+                //             url: '/budgets/add_budget'
+                //         },
+                //         {
+                //             id: 'all-budget',
+                //             title: 'Budget List',
+                //             type: 'item',
+                //             url: '/budgets/allbudgets'
+                //         }
+                //     ]
+                //     // target: true,
+                // },
                 {
                     id: 'general_ledger',
                     title: 'General Ledger',

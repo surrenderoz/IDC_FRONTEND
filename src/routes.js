@@ -130,8 +130,8 @@ const ExtensionImageCropper = React.lazy(() => import('./Demo/Extension/ImageCro
 const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
 // Over Data Start from here
 const Dashboard = React.lazy(() => import('./Pages/Dashboard/Dashboard'));
-const AddGrant = React.lazy(() => import('./Pages/Grants/Add_grant'));
-const AllGrants = React.lazy(() => import('./Pages/Grants/Allgrants'));
+const AddGrant = React.lazy(() => import('./Pages/Funds/Add_fund'));
+const AllFunds = React.lazy(() => import('./Pages/Funds/AllFunds'));
 const AddBudget = React.lazy(() => import('./Pages/Budgets/Add_budget'));
 const AllBudgets = React.lazy(() => import('./Pages/Budgets/AllBudget'));
 
@@ -269,7 +269,7 @@ const routes = [
     /////Over path start here ///////
     { path: '/dashboard', exact: true, name: 'Dashbaord', component: Dashboard },
     { path: '/grants/add_grants', exact: true, name: 'Add Grant', component: AddGrant },
-    { path: '/grants/allgrants', exact: true, name: 'All Grants', component: AllGrants },
+    { path: '/funds/allfunds', exact: true, name: 'All Funds', component: AllFunds },
     { path: '/budgets/add_budget', exact: true, name: 'Add Budget', component: AddBudget },
     { path: '/budgets/allbudgets', exact: true, name: 'All Budgets', component: AllBudgets },
 
